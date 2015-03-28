@@ -5,3 +5,7 @@ website: https://gitlab.com/zachdeibert/GitBackupPlugin
 description: A plugin that allows the world to be backed up into a local Git repository
 authors:
  - Zach Deibert
+commands:
+    backup:
+        description: Saves a backup of the world
+        usage: /backup
