@@ -20,6 +20,11 @@ public class GitBackupPlugin extends JavaPlugin {
     private void doBackup(CommandSender sender) {
         Server server = getServer();
         server.dispatchCommand(sender, "save-all");
+        try {
+            Thread.sleep(5000);
+        } catch ( InterruptedException ex ) {
+            getLogger().log(Level.SEVERE, "Unable to wait for save to complete", ex);
+        }
         byte success = 2;
         try {
             for ( World world : server.getWorlds() ) {
